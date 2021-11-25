@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+.inputRow {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  &.noPadding {
+    padding: 0;
+  }
+
+  .inputFieldWrap {
+    width: 200px;
+    height: auto;
+  }
+
+  .inputDateWrap {
+    width: 200px;
+    height: auto;
+  }
+
+  .submitButtonWrap {
+    align-self: flex-start;
+    width: 90px;
+    height: 56px;
+  }
+}
