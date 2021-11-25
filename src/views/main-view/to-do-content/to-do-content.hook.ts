@@ -60,6 +60,21 @@ const useToDoContent = () => {
         },
         ...prev.slice(foundItemIndex+1, prev.length)
       ]);
+
+      // 2nd way
+      // let shallowArr = [];
+      // for (let item of toDoList){
+      //   shallowArr.push({...item});
+      // }
+      // shallowArr[foundItemIndex].task = newItem.task;
+      // shallowArr[foundItemIndex].dueTo = newItem.dueTo;
+      // setToDoList(shallowArr);
+
+      // 3rd way
+      //let shallowArr = JSON.parse(JSON.stringify(toDoList));
+      // shallowArr[foundItemIndex].task = newItem.task;
+      // shallowArr[foundItemIndex].dueTo = newItem.dueTo;
+      // setToDoList(shallowArr);
     }
   };
 
