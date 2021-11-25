@@ -8,6 +8,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: 7px 10px;
+  position: relative;
 
   .header {
     width: 100%;
@@ -25,14 +26,13 @@
   .inputRowWrap {
     width: 100%;
     height: auto;
-    position: relative;
 
     .restoreItemBoxWrap {
       width: auto;
       height: auto;
       position: absolute;
-      bottom: 30px;
-      right: -150px;
+      top: -42px;
+      right: -40px;
     }
   }
 }
@@ -41,5 +41,20 @@
   .toDoContent {
     width: 600px;
     height: 600px;
+  }
+}
+
+@media(min-width: 650px) {
+  .toDoContent {
+    position: unset;
+
+    .inputRowWrap {
+      position: relative;
+
+      .restoreItemBoxWrap {
+        top: -53px;
+        right: 20px;
+      }
+    }
   }
 }
