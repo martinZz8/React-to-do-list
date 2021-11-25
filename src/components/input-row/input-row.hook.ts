@@ -5,10 +5,10 @@ import {initialInputValues, initialErrorsInputValues} from "./input.row.data";
 
 // interfaces
 import {IInputValues, IErrorsInputValues} from "./input-row.types";
-import {IToDoItem} from "../../types/to-do-item.types";
+import {ITDOToDoItem, IToDoItem} from "../../types/to-do-item.types";
 
 const useInputRow = (
-    manageItem: (item: IToDoItem) => void,
+    manageItem: (item: ITDOToDoItem) => void,
     forcedInitialValues?: IToDoItem,
     setSuccessfullyManagedItem?: () => void
   ) => {
@@ -27,7 +27,7 @@ const useInputRow = (
   const [errorsInputValues, setErrorsInputValues] = useState<IErrorsInputValues>(initialErrorsInputValues);
 
   useEffect(() => {
-    setErrorsInputValues(initialErrorsInputValues)
+    setErrorsInputValues(initialErrorsInputValues);
   },[inputValues]);
 
   const handleInputChange = (name: string, value: string) => {

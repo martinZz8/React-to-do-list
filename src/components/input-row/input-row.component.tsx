@@ -11,10 +11,10 @@ import InputField from "../ui/input-field/input-field.component";
 import Button from "../ui/button/button.component";
 
 // interfaces
-import {IToDoItem} from "../../types/to-do-item.types";
+import {ITDOToDoItem, IToDoItem} from "../../types/to-do-item.types";
 
 interface IInputRow {
-  manageItem: (item: IToDoItem) => void;
+  manageItem: (item: ITDOToDoItem) => void;
   forcedInitialValues?: IToDoItem;
   setSuccessfullyManagedItem?: () => void;
   noPadding?: boolean;

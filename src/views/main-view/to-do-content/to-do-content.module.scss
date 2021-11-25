@@ -21,6 +21,20 @@
       color: $colorBlack;
     }
   }
+
+  .inputRowWrap {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .restoreItemBoxWrap {
+      width: auto;
+      height: auto;
+      position: absolute;
+      bottom: 30px;
+      right: -150px;
+    }
+  }
 }
 
 @media(min-width: 800px) {

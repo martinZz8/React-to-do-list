@@ -7,12 +7,12 @@ import styles from "./to-do-list.module.scss";
 import ToDoItem from "./item/to-do-item.component";
 
 // interfaces
-import {IToDoItem} from "../../types/to-do-item.types";
+import {ITDOToDoItem, IToDoItem} from "../../types/to-do-item.types";
 
 interface IToDoList {
   toDoList: IToDoItem[];
-  removeItemFromList: (index: number) => void;
-  updateItem: (index: number, newItem: IToDoItem) => void;
+  removeItemFromList: (id: number) => void;
+  updateItem: (id: number, newItem: ITDOToDoItem) => void;
 }
 
 const ToDoList: React.FC<IToDoList> = ({toDoList, removeItemFromList, updateItem}) => {
@@ -27,13 +27,13 @@ const ToDoList: React.FC<IToDoList> = ({toDoList, removeItemFromList, updateItem
             {
               toDoList.map((item, index) => (
                 <div
-                  key={index}
+                  key={item.id}
                   className={styles.toDoItemWrap}
                 >
                   <ToDoItem
                     item={item}
-                    removeItemFromList={() => removeItemFromList(index)}
-                    updateItem={(newItem) => updateItem(index, newItem)}
+                    removeItemFromList={() => removeItemFromList(item.id)}
+                    updateItem={(newItem) => updateItem(item.id, newItem)}
                   />
                 </div>
               ))

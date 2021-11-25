@@ -13,13 +13,13 @@ import {changeDateFormatToPl} from "../../../functions/change-date-format-to-pl"
 import Button from "../../ui/button/button.component";
 
 // interfaces
-import {IToDoItem} from "../../../types/to-do-item.types";
+import {ITDOToDoItem, IToDoItem} from "../../../types/to-do-item.types";
 import InputRow from "../../input-row/input-row.component";
 
 interface IToDoItemInt {
   item: IToDoItem;
   removeItemFromList: () => void;
-  updateItem: (newItem: IToDoItem) => void;
+  updateItem: (newItem: ITDOToDoItem) => void;
 }
 
 const ToDoItem: React.FC<IToDoItemInt> = ({item, removeItemFromList, updateItem}) => {
@@ -56,10 +56,7 @@ const ToDoItem: React.FC<IToDoItemInt> = ({item, removeItemFromList, updateItem}
               backgroundColor="red"
               fontColor="white"
               title="Usuń"
-              handleClick={() => {
-                setIsEditFormOpened(false);
-                removeItemFromList();
-              }}
+              handleClick={removeItemFromList}
             />
           </div>
         </div>
